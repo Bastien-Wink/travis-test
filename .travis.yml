@@ -7,7 +7,7 @@ php:
 addons:
   apt_packages:
     - php5-curl
-    - zendframework
+    - libzend-framework-php
 
 env:
   global:
