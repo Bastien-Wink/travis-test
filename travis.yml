@@ -1,0 +1,20 @@
+language: php
+dist: trusty
+sudo: false
+php:
+  - '5.6'
+
+addons:
+  apt_packages:
+    - php5-curl
+    - zendframework
+
+env:
+  global:
+    - CONFIG_FILE_PATH = $TRAVIS_BUILD_DIR/configs/config.yml
+
+before_script:
+  - composer install --prefer-source --no-interaction --dev
+
+# Commands you want to run that will verify your build.
+script: php application/console
